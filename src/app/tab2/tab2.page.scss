@@ -1,0 +1,16 @@
+
+.text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: #303940;
+}
+
+ion-content{
+    text-align: center;
+    vertical-align: center;
+}
+
+ion-item:has(ion-icon){
+    text-align: center;
+}

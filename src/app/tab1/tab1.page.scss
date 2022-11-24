@@ -1,0 +1,87 @@
+  
+   --iOS places the subtitle above the title 
+  ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+  ion-item{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+ion-img{
+  max-width: 70px;
+  float: right;
+  margin: 5px;
+  object-fit: cover;
+}
+
+ion-col:has(ion-card-header) { 
+  color: rgb(0, 0, 0);
+  text-align: left;
+}
+
+ion-card-header{
+  padding-right:0px !important;
+  padding-left :0px !important;
+}
+
+ion-accordion{
+  border: 0.5px solid #e0ddddc2;
+  border-radius: 10px 10px 0px 0px;
+}
+
+
+.Shell{
+  background-color:#ed1c24;
+}
+
+.Potencial{
+  background-color:blue;
+}
+
+.Ale{
+  background-color:#0e599c;
+}
+
+.Branca{
+  background-color:#e0ddddc2;
+}
+
+.BR{
+  background-color:rgb(230, 230, 230);
+  border:#000;
+}
+.Ipiranga{
+  background-color:#f5d43d;
+}
+.Dibrape{
+  background-color: #45588f;
+}
+.Didrape{
+  background-color: #45588f;
+}
+
+
+ion-col:has(ion-card-content) { 
+  text-align: right;
+  vertical-align: bottom;
+}
+ion-card-content{
+  padding-right:0px !important;
+  padding-left :0px !important;
+  font-family:Roboto !important;
+  margin-top: 20px;
+  color: #0e599c;
+  font-size: 25px;
+  text-align: end;
+  vertical-align:bottom;
+  font-weight: bolder;
+}
+.table{
+  text-align: center;
+}
+
+.footer{
+    padding-bottom: 60px;
+}

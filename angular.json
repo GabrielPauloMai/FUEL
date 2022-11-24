@@ -31,8 +31,13 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": []
+            "styles": ["src/theme/variables.scss", "src/global.scss", "node_modules/bootstrap/dist/css/bootstrap.css"],
+            "scripts": [
+             /* "node_modules/jquery/dist/jquery.js",
+	            "node_modules/popper.js/dist/umd/popper.js",
+	            "node_modules/bootstrap/dist/js/bootstrap.js"
+
+            */]
           },
           "configurations": {
             "production": {
@@ -136,7 +141,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": "da90730e-9fcd-4a6a-92ad-b8e1567d7d52"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

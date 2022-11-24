@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+     Calculadora
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,106 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Calculadora</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Calculadora</ion-card-title>
+      <ion-card-subtitle>Simule agora mesmo o valor a pagar em um abastecimento</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Combustível</ion-label>
+          <ion-select interface="popover" [(ngModel)]="tipo" placeholder="Selecione um">
+            <ion-select-option value=1>Gasolina Comum</ion-select-option>
+            <ion-select-option value="2">Gasolina Aditivada</ion-select-option>
+            <ion-select-option value="3">Álcool</ion-select-option>
+            <ion-select-option value="4">GNV</ion-select-option>
+            <ion-select-option value="5">Diesel S10</ion-select-option>
+            <ion-select-option value="6">Diesel S500</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item *ngIf="tipo == '1'">
+          <ion-label>Posto</ion-label>
+          <ion-select interface="popover" [(ngModel)]="posto" placeholder="Selecione um">
+            <div *ngFor="let dados of dados;">
+              <ion-select-option *ngIf="dados.Gasnum != '0'" value={{dados.Gasnum}}>{{dados.Posto}} - R${{dados.GasolinaComum}}</ion-select-option>
+            </div>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item *ngIf="tipo == '2'">
+          <ion-label>Posto</ion-label>
+          <ion-select interface="popover" [(ngModel)]="posto" placeholder="Selecione um">
+            <div *ngFor="let dados of dados;">
+              <ion-select-option *ngIf="dados.Adtnum != '0'" value={{dados.Aditnum}}>{{dados.Posto}} - R${{dados.GasolinaAditivada}}</ion-select-option>
+            </div>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item *ngIf="tipo == '3'">
+          <ion-label>Posto</ion-label>
+          <ion-select interface="popover" [(ngModel)]="posto" placeholder="Selecione um">
+            <div *ngFor="let dados of dados;">
+              <ion-select-option *ngIf="dados.Alcnum != '0'" value={{dados.Alcnum}}>{{dados.Posto}} - R${{dados.Alcool}}</ion-select-option>
+            </div>
+          </ion-select>
+        </ion-item>
+
+        <ion-item *ngIf="tipo == '4'">
+          <ion-label>Posto</ion-label>
+          <ion-select interface="popover" [(ngModel)]="posto" placeholder="Selecione um">
+            <div *ngFor="let dados of dados;">
+              <ion-select-option *ngIf="dados.GNVnum != '0'" value={{dados.GNVnum}}>{{dados.Posto}} - R${{dados.GNV}}</ion-select-option>
+            </div>
+          </ion-select>
+        </ion-item>
+
+        <ion-item *ngIf="tipo == '5'">
+          <ion-label>Posto</ion-label>
+          <ion-select interface="popover" [(ngModel)]="posto" placeholder="Selecione um">
+            <div *ngFor="let dados of dados;">
+              <ion-select-option *ngIf="dados.S10 != '0'" value={{dados.S10}}>{{dados.Posto}} - R${{dados.DieselS10}}</ion-select-option>
+            </div>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item *ngIf="tipo == '6'">
+          <ion-label>Posto</ion-label>
+          <ion-select interface="popover" [(ngModel)]="posto" placeholder="Selecione um">
+            <div *ngFor="let dados of dados;">
+              <ion-select-option *ngIf="dados.S500 != '0'" value={{dados.S500}}>{{dados.Posto}} - R${{dados.DieselS500}}</ion-select-option>
+            </div>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item *ngIf="posto != null">
+          <ion-label>Litros</ion-label>
+          <ion-input type="number" [(ngModel)]="litros" placeholder=""></ion-input>
+        </ion-item>
+
+        <div *ngIf="litros != null">
+          <ion-button expand="full" (click)="calc(posto, litros);">Calcular</ion-button>
+        </div>
+      </ion-list>
+
+
+      <ion-item *ngIf="result != null">
+        <ion-icon name="cash-outline"></ion-icon>
+        <ion-card-header>
+          <ion-card-title class="text">O valor do seu abastecimento será de {{result}}</ion-card-title>
+        </ion-card-header>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

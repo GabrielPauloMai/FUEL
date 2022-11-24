@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+    Profile
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen="true" class="content" slot="fixed" >
+    <div class="card">
+      <div class="header">
+        <div class="avatar">
+          <img src="../../assets/foto.jpg" alt="">
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="user-meta ion-text-center">
+          <h3 class="playername">Gabriel Paulo Mai</h3>
+          <h5 class="country">Análise e Desenvolvimento de Sistemas</h5>
+        </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+        <ion-button expand="full" color="primary" href="http://gabrielcode.live"><ion-icon name="globe-outline"></ion-icon>Site</ion-button>
+        <ion-button expand="full" color="secondary" href="https://github.com/GabrielPauloMai"><ion-icon name="logo-github"></ion-icon>GitHub</ion-button>
+        <br>
+        <div class="text">Este APP é uma ferramenta desenvolvida para consultar os valores praticados pelos postos de combustível na cidade de Jaraguá do Sul.
+        </div>
+        <br>
+        <div class="text">Seu desenvolvimento e funcionalidades devem ser aprimoradas, visto que o app tem como objetivo o projeto interdisciplinar do curso de ADS da 
+          Faculdade Católica de Santa Catarina -2022.
+        </div>
+        <br>
+        <div class="text">A API de consulta foi criada por Gabriel Molina Ayala, e reutilizada neste projeto. O código primário pode ser visualizado <a href="https://github.com/GabrielAyala/comprare-api">aqui </a>
+        </div>
+      </div>
+    </div>
 </ion-content>
